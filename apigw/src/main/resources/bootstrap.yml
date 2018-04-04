@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ApiGw
+
+server:
+  port: 8080

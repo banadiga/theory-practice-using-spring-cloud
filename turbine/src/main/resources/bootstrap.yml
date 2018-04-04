@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: Turbine
+
+server:
+  port: 8001
