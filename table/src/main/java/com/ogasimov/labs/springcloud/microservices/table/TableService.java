@@ -2,14 +2,13 @@ package com.ogasimov.labs.springcloud.microservices.table;
 
 import lombok.AllArgsConstructor;
 
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 @Transactional

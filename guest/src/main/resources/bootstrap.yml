@@ -1,6 +1,10 @@
 spring:
   application:
     name: Guest
+  rabbitmq:
+    host: localhost
+    username: root
+    password: root
 
 server:
   port: 8081

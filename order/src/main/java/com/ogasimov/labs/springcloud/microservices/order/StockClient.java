@@ -1,11 +1,10 @@
 package com.ogasimov.labs.springcloud.microservices.order;
 
-import java.util.List;
-
-//import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.List;
 
 @FeignClient("Stock")
 public interface StockClient {
