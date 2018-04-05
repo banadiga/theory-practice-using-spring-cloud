@@ -1,5 +1,7 @@
 package com.ogasimov.labs.springcloud.microservices.order;
 
+import lombok.AllArgsConstructor;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@AllArgsConstructor
 public class OrderController {
-  @Autowired
-  private OrderService orderService;
+  private final OrderService orderService;
 
   @PostMapping("/order/{tableId}")
   public Integer createOrder(@PathVariable Integer tableId, @RequestBody List<Integer> menuItems) {
-    return null;
+    return orderService.createOrder(tableId, menuItems);
   }
 }

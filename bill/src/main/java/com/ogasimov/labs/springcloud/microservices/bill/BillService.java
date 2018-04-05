@@ -1,5 +1,7 @@
 package com.ogasimov.labs.springcloud.microservices.bill;
 
+import lombok.AllArgsConstructor;
+
 import java.util.List;
 
 import javax.persistence.EntityNotFoundException;
@@ -10,9 +12,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
+@AllArgsConstructor
 public class BillService {
-  @Autowired
-  private BillRepository billRepository;
+  private final BillRepository billRepository;
 
   public void createBill(Integer tableId, Integer orderId) {
     Bill bill = new Bill();

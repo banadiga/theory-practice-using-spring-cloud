@@ -1,5 +1,7 @@
 package com.ogasimov.labs.springcloud.microservices.order;
 
+import lombok.AllArgsConstructor;
+
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -11,9 +13,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
+@AllArgsConstructor
 public class MenuService {
-  @Autowired
-  private MenuItemRepository menuItemRepository;
+  private final MenuItemRepository menuItemRepository;
 
   public Map<Integer, String> getMenuItems() {
     return menuItemRepository.findAll()

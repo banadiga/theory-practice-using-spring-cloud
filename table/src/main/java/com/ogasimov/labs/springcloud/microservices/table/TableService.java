@@ -1,5 +1,7 @@
 package com.ogasimov.labs.springcloud.microservices.table;
 
+import lombok.AllArgsConstructor;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,9 +13,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
+@AllArgsConstructor
 public class TableService {
-  @Autowired
-  private TableRepository tableRepository;
+  private final TableRepository tableRepository;
 
   public List<Integer> getTableIds() {
     return tableRepository.findAll()

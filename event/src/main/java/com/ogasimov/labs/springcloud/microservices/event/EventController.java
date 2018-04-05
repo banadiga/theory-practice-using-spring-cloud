@@ -12,7 +12,6 @@ import com.ogasimov.labs.springcloud.microservices.common.EventDto;
 
 @RestController
 public class EventController {
-  @Autowired
   private EventService eventService;
 
   @GetMapping("/events/{startId}/{count}")

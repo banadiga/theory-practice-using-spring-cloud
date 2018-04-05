@@ -1,20 +1,18 @@
 package com.ogasimov.labs.springcloud.microservices.guest;
 
+import lombok.AllArgsConstructor;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class DinnerService {
-  @Autowired
-  private TableClient tableClient;
-
-  @Autowired
-  private OrderClient orderClient;
-
-  @Autowired
-  private BillClient billClient;
+  private final TableClient tableClient;
+  private final OrderClient orderClient;
+  private final BillClient billClient;
 
   public Integer startDinner(List<Integer> menuItems) {
     //check free tables
@@ -28,7 +26,7 @@ public class DinnerService {
     tableClient.occupyTable(tableId);
 
     //create the order
-    orderClient.createOrder(tableId, menuItems);
+    orderClient.createOrder(tableId/*, menuItems*/);
 
     return tableId;
   }

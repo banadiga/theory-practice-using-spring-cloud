@@ -1,5 +1,7 @@
 package com.ogasimov.labs.springcloud.microservices.stock;
 
+import lombok.AllArgsConstructor;
+
 import java.util.List;
 
 import javax.persistence.EntityNotFoundException;
@@ -10,9 +12,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
+@AllArgsConstructor
 public class StockService {
-  @Autowired
-  private StockRepository stockRepository;
+  private final StockRepository stockRepository;
 
   public void minusFromStock(List<Integer> menuItems) {
     menuItems.forEach(menuItemId -> {

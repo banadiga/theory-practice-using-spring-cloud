@@ -1,25 +1,36 @@
 package com.ogasimov.labs.springcloud.microservices.order;
 
-import java.util.List;
+import lombok.AllArgsConstructor;
 
-import javax.transaction.Transactional;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
+import javax.persistence.EntityNotFoundException;
+import javax.transaction.Transactional;
 
 @Service
 @Transactional
+@AllArgsConstructor
 public class OrderService {
-  @Autowired
-  private OrderRepository orderRepository;
-
-  @Autowired
-  private StockClient stockClient;
-
-  @Autowired
-  private BillClient billClient;
+  private final OrderRepository orderRepository;
+  private final StockClient stockClient;
+  private final BillClient billClient;
+  private final MenuService menuService;
 
   public Integer createOrder(Integer tableId, List<Integer> menuItems) {
+    Set<Integer> allMenuItemsExist = menuService.getMenuItems().keySet();
+
+    Optional<Integer> notExistMenuItem = menuItems.stream()
+        .filter(item -> !allMenuItemsExist.contains(item))
+        .findAny();
+
+    notExistMenuItem.ifPresent(item -> {
+      throw new EntityNotFoundException("Mnu items not found: " + item);
+    });
+
     Order order = new Order();
     order.setTableId(tableId);
     orderRepository.save(order);
