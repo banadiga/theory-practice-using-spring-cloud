@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  sleuth:
+    enabled: true
+  zipkin:
+    enabled: true
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    guest:
+      path: /dinner/**
+      serviceId: Guest
+      stripPrefix: false
+    menu:
+      path: /menu/**
+      serviceId: Order
+      stripPrefix: false

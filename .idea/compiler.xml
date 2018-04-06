@@ -16,6 +16,7 @@
         <module name="stock" />
         <module name="table" />
         <module name="turbine" />
+        <module name="zipkin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -30,6 +31,7 @@
       <module name="stock" target="1.8" />
       <module name="table" target="1.8" />
       <module name="turbine" target="1.8" />
+      <module name="zipkin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

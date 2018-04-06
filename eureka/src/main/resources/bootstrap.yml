@@ -1,17 +1,10 @@
 spring:
   application:
     name: Eureka
-
-server:
-  port: 8761
-
-eureka:
-  instance:
-    preferIpAddress: true
-    metadataMap:
-       zone: zone1
-  client:
-    fetchRegistry: true
-    registerWithEureka: true
-    serviceUrl:
-      defaultZone: http://localhost:8762/eureka
+  cloud:
+    config:
+      uri: http://localhost:9000/
+      fail-fast: true
+      retry:
+        initial-interval: 2000
+        max-attempts: 3

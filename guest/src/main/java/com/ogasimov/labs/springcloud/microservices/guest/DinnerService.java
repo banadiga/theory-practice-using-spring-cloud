@@ -25,7 +25,7 @@ public class DinnerService {
     tableClient.occupyTable(tableId);
 
     //create the order
-    orderClient.createOrder(tableId/*, menuItems*/);
+    orderClient.createOrder(tableId, menuItems);
 
     return tableId;
   }

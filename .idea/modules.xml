@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/stock/stock.iml" filepath="$PROJECT_DIR$/stock/stock.iml" />
       <module fileurl="file://$PROJECT_DIR$/table/table.iml" filepath="$PROJECT_DIR$/table/table.iml" />
       <module fileurl="file://$PROJECT_DIR$/turbine/turbine.iml" filepath="$PROJECT_DIR$/turbine/turbine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zipkin/zipkin.iml" filepath="$PROJECT_DIR$/zipkin/zipkin.iml" />
     </modules>
   </component>
 </project>

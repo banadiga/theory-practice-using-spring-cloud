@@ -1,6 +1,22 @@
 spring:
   application:
     name: Config
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:/Users/ihor/Workspace/theory-practice-using-spring-cloud/config-repo
+  rabbitmq:
+    host: localhost
+    username: root
+    password: root
+  profiles:
+    active: native
 
 server:
   port: 9000
+
+management:
+  security:
+    enabled: false
+

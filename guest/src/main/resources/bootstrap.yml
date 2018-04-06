@@ -1,10 +1,10 @@
 spring:
   application:
     name: Guest
-  rabbitmq:
-    host: localhost
-    username: root
-    password: root
-
-server:
-  port: 8081
+  cloud:
+    config:
+      uri: http://localhost:9000/
+      fail-fast: true
+      retry:
+        initial-interval: 2000
+        max-attempts: 3
