@@ -1,7 +1,9 @@
 package com.ogasimov.labs.springcloud.microservices.stock;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.Column;
@@ -13,6 +15,8 @@ import javax.persistence.Id;
 @Data
 @ToString
 @EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "stock")
 public class Stock {
   @Id

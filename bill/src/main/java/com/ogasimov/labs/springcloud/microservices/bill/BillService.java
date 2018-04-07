@@ -1,6 +1,6 @@
 package com.ogasimov.labs.springcloud.microservices.bill;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import javax.transaction.Transactional;
 
 @Service
 @Transactional
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BillService {
   private final BillRepository billRepository;
 

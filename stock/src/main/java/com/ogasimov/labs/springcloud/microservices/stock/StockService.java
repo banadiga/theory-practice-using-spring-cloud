@@ -1,7 +1,11 @@
 package com.ogasimov.labs.springcloud.microservices.stock;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+import com.ogasimov.labs.springcloud.microservices.common.EmptyStockCommand;
+
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,11 +13,13 @@ import java.util.List;
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 
+@Slf4j
 @Service
 @Transactional
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class StockService {
   private final StockRepository stockRepository;
+  private final ApplicationContext context;
 
   public void minusFromStock(List<Integer> menuItems) {
     menuItems.forEach(menuItemId -> {
@@ -22,6 +28,9 @@ public class StockService {
         throw new EntityNotFoundException("Stock not found: " + menuItemId);
       }
       if (stock.getCount() == 0) {
+        EmptyStockCommand emptyStockCommand = new EmptyStockCommand(this, context.getId(), menuItemId.toString());
+        log.info("New event {}", emptyStockCommand);
+        context.publishEvent(emptyStockCommand);
         throw new EntityNotFoundException("Stock empty: " + menuItemId);
       }
       stock.setCount(stock.getCount() - 1);

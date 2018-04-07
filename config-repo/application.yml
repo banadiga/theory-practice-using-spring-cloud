@@ -38,3 +38,7 @@ hystrix:
 management:
   security:
     enabled: false
+
+endpoints:
+  restart:
+    enabled: true

@@ -1,13 +1,13 @@
 package com.ogasimov.labs.springcloud.microservices.guest;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class DinnerService {
   private final TableClient tableClient;
   private final OrderClient orderClient;

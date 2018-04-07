@@ -1,6 +1,6 @@
 package com.ogasimov.labs.springcloud.microservices.table;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
 
 @Service
 @Transactional
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class TableService {
   private final TableRepository tableRepository;
 

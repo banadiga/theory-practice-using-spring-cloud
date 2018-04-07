@@ -8,9 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="apigw" />
         <module name="bill" />
+        <module name="common" />
         <module name="config" />
         <module name="dashboard" />
         <module name="eureka" />
+        <module name="event" />
         <module name="guest" />
         <module name="order" />
         <module name="stock" />
@@ -22,9 +24,11 @@
     <bytecodeTargetLevel>
       <module name="apigw" target="1.8" />
       <module name="bill" target="1.8" />
+      <module name="common" target="1.8" />
       <module name="config" target="1.8" />
       <module name="dashboard" target="1.8" />
       <module name="eureka" target="1.8" />
+      <module name="event" target="1.8" />
       <module name="guest" target="1.8" />
       <module name="microservices" target="1.8" />
       <module name="order" target="1.8" />

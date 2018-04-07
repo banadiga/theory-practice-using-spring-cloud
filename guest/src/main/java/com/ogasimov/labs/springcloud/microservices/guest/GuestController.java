@@ -1,7 +1,7 @@
 package com.ogasimov.labs.springcloud.microservices.guest;
 
-import lombok.AllArgsConstructor;
-import lombok.extern.log4j.Log4j;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Log4j
+@Slf4j
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class GuestController {
   private final DinnerService dinnerService;
 

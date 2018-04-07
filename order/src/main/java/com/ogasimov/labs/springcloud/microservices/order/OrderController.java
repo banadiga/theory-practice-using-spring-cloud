@@ -1,6 +1,6 @@
 package com.ogasimov.labs.springcloud.microservices.order;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class OrderController {
   private final OrderService orderService;
 

@@ -1,6 +1,6 @@
 package com.ogasimov.labs.springcloud.microservices.order;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ import javax.transaction.Transactional;
 
 @Service
 @Transactional
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class OrderService {
   private final OrderRepository orderRepository;
   private final StockClient stockClient;

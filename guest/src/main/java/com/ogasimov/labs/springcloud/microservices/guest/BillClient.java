@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface BillClient {
 
   @GetMapping("/bill/{tableId}")
-  void payBills(@PathVariable("tableId")Integer tableId);
+  void payBills(@PathVariable("tableId") Integer tableId);
 }

@@ -1,7 +1,7 @@
 package com.ogasimov.labs.springcloud.microservices.order;
 
-import lombok.AllArgsConstructor;
-import lombok.extern.log4j.Log4j;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
-@Log4j
+@Slf4j
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class MenuController {
   private final MenuService menuService;
 
   @GetMapping("/")
   @HystrixCommand
   public void index() {
-    log.info("Guest index");
+    log.info("Menu index");
   }
 
   @GetMapping("/menu")
