@@ -1,0 +1,19 @@
+server:
+  port: 9002
+
+management:
+  security:
+    enabled: false
+
+security:
+  user:
+    name: admin
+    password: admin
+
+spring:
+  application:
+    name: Admin
+  boot:
+    admin:
+      routes:
+        endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,activiti

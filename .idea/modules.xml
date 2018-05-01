@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/admin/admin.iml" filepath="$PROJECT_DIR$/admin/admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/apigw/apigw.iml" filepath="$PROJECT_DIR$/apigw/apigw.iml" />
       <module fileurl="file://$PROJECT_DIR$/bill/bill.iml" filepath="$PROJECT_DIR$/bill/bill.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
